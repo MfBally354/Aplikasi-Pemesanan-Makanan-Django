@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'payments',
     'theme',
     "tailwind",
-    "django_browser_reload",
+    # "django_browser_reload",
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
+    # "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'foodorder.urls'
@@ -140,4 +140,8 @@ AUTH_USER_MODEL = 'accounts.User'
 
 LOGIN_URL = "/accounts/login/"
 
-
+# PENTING: Tambahkan ini untuk mengecualikan semua URL di aplikasi 'restaurants'
+DJANGO_BROWSER_RELOAD_EXCLUDE = [
+    # Ini akan mengecualikan semua path yang dimulai dengan /restaurants/
+    '/restaurants/', 
+]

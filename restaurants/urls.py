@@ -10,9 +10,20 @@ urlpatterns = [
     path('<int:id>/edit/', views.restaurant_edit, name='edit'),
     path('<int:id>/delete/', views.restaurant_delete, name='delete'),
 
+    path('dashboard/', views.dashboard, name='dashboard'),
+
     # menu
     path('<int:resto_id>/menus/', views.menu_list, name='menu_list'),
     path('<int:resto_id>/menus/create/', views.menu_create, name='menu_create'),
     path('<int:resto_id>/menus/<int:id>/edit/', views.menu_edit, name='menu_edit'),
     path('<int:resto_id>/menus/<int:id>/delete/', views.menu_delete, name='menu_delete'),
+
+    # ORDER MANAGEMENT
+    path('restaurants/<int:resto_id>/orders/', views.restaurant_orders, name='restaurant_orders'), 
+    path("orders/<int:order_id>/accept/", views.accept_order, name="accept_order"),
+    path("orders/<int:order_id>/prepare/", views.prepare_order, name="prepare_order"),
+    path("orders/<int:order_id>/ready/", views.ready_order, name="ready_order"),
+
+    # PAYMENT
+    path("orders/<int:order_id>/payment/", views.payment_view, name="payment_view"),
 ]

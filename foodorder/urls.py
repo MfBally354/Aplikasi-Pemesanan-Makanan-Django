@@ -29,6 +29,5 @@ urlpatterns = [
     # drivers
     path('drivers/', include('drivers.urls', namespace='drivers')), # PASTIKAN ADA INI
 
-    # Browser reload
-    path("django-browser-reload/", include("django_browser_reload.urls")),
+   
 ]
